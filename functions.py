@@ -523,9 +523,6 @@ def main(spacerpady, font_size, text_font):
             lrf_bottom_entry_frame.pack_forget()
             lrf_bottom_space_fill.pack_forget()
 
-            # left_root_frame.pack_forget()
-            # left_root_frame.pack(side='left', fill='both',expand=True)
-
         def cart_gui():
             global switch_var
             lrf_pack_forget()
@@ -622,13 +619,13 @@ def main(spacerpady, font_size, text_font):
             else:
                 rho_text_field.insert(tk.END, PHI)
 
-        def rho_theta_insert():
+        def rho_z_insert():
             rho_text = rho_text_field.get()
             rho_text_field.delete(0, tk.END)
             if rho_text:
-                rho_text_field.insert(tk.END, rho_text+f"*{THETA}")
+                rho_text_field.insert(tk.END, rho_text+f"*z")
             else:
-                rho_text_field.insert(tk.END, THETA)
+                rho_text_field.insert(tk.END, "z")
 
         def phi_c_rho_insert():
             phi_c_text = phi_c_text_field.get()
@@ -646,13 +643,13 @@ def main(spacerpady, font_size, text_font):
             else:
                 phi_c_text_field.insert(tk.END, PHI)
 
-        def phi_c_theta_insert():
+        def phi_c_z_insert():
             phi_c_text = phi_c_text_field.get()
             phi_c_text_field.delete(0, tk.END)
             if phi_c_text:
-                phi_c_text_field.insert(tk.END, phi_c_text+f"*{THETA}")
+                phi_c_text_field.insert(tk.END, phi_c_text+f"*z")
             else:
-                phi_c_text_field.insert(tk.END, THETA)
+                phi_c_text_field.insert(tk.END, "z")
 
         def zcyl_rho_insert():
             zcyl_text = zcyl_text_field.get()
@@ -670,21 +667,21 @@ def main(spacerpady, font_size, text_font):
             else:
                 zcyl_text_field.insert(tk.END, PHI)
         
-        def zcyl_theta_insert():
+        def zcyl_z_insert():
             zcyl_text = zcyl_text_field.get()
             zcyl_text_field.delete(0, tk.END)
             if zcyl_text:
-                zcyl_text_field.insert(tk.END, zcyl_text+f"*{THETA}")
+                zcyl_text_field.insert(tk.END, zcyl_text+f"*z")
             else:
-                zcyl_text_field.insert(tk.END, THETA)
+                zcyl_text_field.insert(tk.END, "z")
         
-        def r_rho_insert():
+        def r_r_insert():
             r_text = r_text_field.get()
             r_text_field.delete(0, tk.END)
             if r_text:
-                r_text_field.insert(tk.END, r_text+f"*{RHO}")
+                r_text_field.insert(tk.END, r_text+f"*r")
             else:
-                r_text_field.insert(tk.END, RHO)
+                r_text_field.insert(tk.END, "r")
         
         def r_phi_insert():
             r_text = r_text_field.get()
@@ -702,13 +699,13 @@ def main(spacerpady, font_size, text_font):
             else:
                 r_text_field.insert(tk.END, THETA)
 
-        def theta_rho_insert():
+        def theta_r_insert():
             theta_text = theta_text_field.get()
             theta_text_field.delete(0, tk.END)
             if theta_text:
-                theta_text_field.insert(tk.END, theta_text+f"*{RHO}")
+                theta_text_field.insert(tk.END, theta_text+f"*r")
             else:
-                theta_text_field.insert(tk.END, RHO)
+                theta_text_field.insert(tk.END, "r")
         
         def theta_phi_insert():
             theta_text = theta_text_field.get()
@@ -726,13 +723,13 @@ def main(spacerpady, font_size, text_font):
             else:
                 theta_text_field.insert(tk.END, THETA)
         
-        def phi_s_rho_insert():
+        def phi_s_r_insert():
             phi_s_text = phi_s_text_field.get()
             phi_s_text_field.delete(0, tk.END)
             if phi_s_text:
-                phi_s_text_field.insert(tk.END, phi_s_text+f"*{RHO}")
+                phi_s_text_field.insert(tk.END, phi_s_text+f"*r")
             else:
-                phi_s_text_field.insert(tk.END, RHO)
+                phi_s_text_field.insert(tk.END, "r")
         
         def phi_s_phi_insert():
             phi_s_text = phi_s_text_field.get()
@@ -849,7 +846,7 @@ def main(spacerpady, font_size, text_font):
         rho_rho_button.pack(side="left")
         rho_phi_button = ttk.Button(cyl_input_buttons_frame, text=PHI, command=rho_phi_insert, width=cyl_input_width)
         rho_phi_button.pack(side="left")
-        rho_theta_button = ttk.Button(cyl_input_buttons_frame, text=THETA, command=rho_theta_insert, width=cyl_input_width)
+        rho_theta_button = ttk.Button(cyl_input_buttons_frame, text="z", command=rho_z_insert, width=cyl_input_width)
         rho_theta_button.pack(side="left")
         c_rho_entry_spacer = ttk.Label(cyl_input_buttons_frame, width=3)
         c_rho_entry_spacer.pack(side="left")
@@ -858,7 +855,7 @@ def main(spacerpady, font_size, text_font):
         phi_c_rho_button.pack(side="left")
         phi_c_phi_button = ttk.Button(cyl_input_buttons_frame, text=PHI, command=phi_c_phi_insert, width=cyl_input_width)
         phi_c_phi_button.pack(side="left")
-        phi_c_theta_button = ttk.Button(cyl_input_buttons_frame, text=THETA, command=phi_c_theta_insert, width=cyl_input_width)
+        phi_c_theta_button = ttk.Button(cyl_input_buttons_frame, text="z", command=phi_c_z_insert, width=cyl_input_width)
         phi_c_theta_button.pack(side="left")
         c_phi_entry_spacer = ttk.Label(cyl_input_buttons_frame, width=3) 
         c_phi_entry_spacer.pack(side="left")
@@ -867,7 +864,7 @@ def main(spacerpady, font_size, text_font):
         zcyl_rho_button.pack(side="left")
         zcyl_phi_button = ttk.Button(cyl_input_buttons_frame, text=PHI, command=zcyl_phi_insert, width=cyl_input_width)
         zcyl_phi_button.pack(side="left")
-        zcyl_theta_button = ttk.Button(cyl_input_buttons_frame, text=THETA, command=zcyl_theta_insert, width=cyl_input_width) 
+        zcyl_theta_button = ttk.Button(cyl_input_buttons_frame, text="z", command=zcyl_z_insert, width=cyl_input_width) 
         zcyl_theta_button.pack(side="left")
         c_z_entry_spacer = ttk.Label(cyl_input_buttons_frame, width=3)
         c_z_entry_spacer.pack(side="left")
@@ -913,7 +910,7 @@ def main(spacerpady, font_size, text_font):
         spher_input_width = 6
         #
         spher_input_buttons_frame = ttk.Frame(left_root_frame)
-        r_rho_button = ttk.Button(spher_input_buttons_frame, text=RHO, command=r_rho_insert, width=spher_input_width)
+        r_rho_button = ttk.Button(spher_input_buttons_frame, text="r", command=r_r_insert, width=spher_input_width)
         r_rho_button.pack(side="left")
         r_phi_button = ttk.Button(spher_input_buttons_frame, text=PHI, command=r_phi_insert, width=spher_input_width)
         r_phi_button.pack(side="left")
@@ -922,7 +919,7 @@ def main(spacerpady, font_size, text_font):
         s_rho_entry_spacer = ttk.Label(spher_input_buttons_frame, width=3)
         s_rho_entry_spacer.pack(side="left")
 
-        theta_rho_button = ttk.Button(spher_input_buttons_frame, text=RHO, command=theta_rho_insert, width=spher_input_width)
+        theta_rho_button = ttk.Button(spher_input_buttons_frame, text="r", command=theta_r_insert, width=spher_input_width)
         theta_rho_button.pack(side="left")
         theta_phi_button = ttk.Button(spher_input_buttons_frame, text=PHI, command=theta_phi_insert, width=spher_input_width)
         theta_phi_button.pack(side="left")
@@ -931,7 +928,7 @@ def main(spacerpady, font_size, text_font):
         s_z_entry_spacer = ttk.Label(spher_input_buttons_frame, width=3)
         s_z_entry_spacer.pack(side="left")
 
-        phi_s_rho_button = ttk.Button(spher_input_buttons_frame, text=RHO, command=phi_s_rho_insert, width=spher_input_width)
+        phi_s_rho_button = ttk.Button(spher_input_buttons_frame, text="r", command=phi_s_r_insert, width=spher_input_width)
         phi_s_rho_button.pack(side="left")
         phi_s_phi_button = ttk.Button(spher_input_buttons_frame, text=PHI, command=phi_s_phi_insert, width=spher_input_width)
         phi_s_phi_button.pack(side="left")
