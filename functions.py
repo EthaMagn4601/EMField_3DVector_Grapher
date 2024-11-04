@@ -384,13 +384,19 @@ def main(spacerpady, font_size, text_font):
                     else:    
                         results = initialize_plot()
 
+                # Defines magnitude/direction vector arrays
                 u = results["xhat_out"]
                 v = results["yhat_out"]
                 w = results["zhat_out"]
 
                 if plot_type == "Norm":
+
+                    # plot the plot
                     ax.quiver(x, y, z, u, v, w, length=view_size/10, pivot='middle', normalize=True)
+
                 elif plot_type == "Rel_mag":
+                    
+                    # Sets default value for relative magnitude check button
                     rel_mag_length = 0.1
                     rel_mag_text = rel_mag_entry_field.get()
 
@@ -398,14 +404,25 @@ def main(spacerpady, font_size, text_font):
                     if rel_mag_text:
                         rel_mag_length = float(rel_mag_text)
                     
+                    # inputs 0.1 below relative magnitude check button if nothing is input, otherwise will replace 0.1 with user input
                     rel_mag_entry_field.delete(0, tk.END)
                     rel_mag_entry_field.insert(tk.END, rel_mag_length)
 
+                    # plot the plot
                     ax.quiver(x, y, z, u, v, w, pivot='middle', length=rel_mag_length, normalize=False)
-                elif ((x_input and y_input and z_input) == 0) and plot_type == "Colors":
+
+                # checks if an input is zero
+                elif ((x_input == 0) and (y_input == 0) and (z_input == 0)) and plot_type == "Colors":
+                    
+                    # plot the plot
                     ax.quiver(x, y, z, u, v, w, length=view_size/10, pivot='middle', normalize=True)
+
                 elif plot_type == "Colors":
                     magnitudes = np.sqrt((u**2) + (v**2) + (w**2))
+
+                    #Error correction for divide by zero case
+                    magnitudes = np.nan_to_num(magnitudes)
+
                     norm = mpl.colors.Normalize(vmin=0, vmax=magnitudes.max())
                     colours = mpl.cm.jet(norm(magnitudes))
                     ax.quiver(x, y, z, u, v, w, colors=colours.reshape(-1, 4), length=view_size/10, pivot="middle", normalize=True)
