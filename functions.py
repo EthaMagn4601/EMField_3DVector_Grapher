@@ -964,7 +964,7 @@ def main(spacerpady, font_size, text_font):
         lrf_bottom_frame_text.pack(side="top", fill="x",padx=20, expand=False)
 
         #
-        view_size_text = ttk.Label(lrf_bottom_frame_text, text=f"View size [n*n]:")
+        view_size_text = ttk.Label(lrf_bottom_frame_text, text=f"View size [n*n*n]:")
         view_size_text.config(font=(text_font, font_size, "bold"))
         view_size_text.pack(side="left")
 
@@ -1054,7 +1054,3 @@ def main(spacerpady, font_size, text_font):
 
     root.protocol("WM_DELETE_WINDOW", on_closing)
     root.mainloop()
-
-    # Warnings to include: 
-    # - Recommended gridsize [x*y*z]: x < 6, y < 6, z < 6 (max should be 10x10x10, due to matplotlib being very laggy)
-    # - Don't input random variables into the text entry field areas (i.e. f, g, etc.)
