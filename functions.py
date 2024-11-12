@@ -9,7 +9,6 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 RHO = "\u03C1"
 THETA = "\u03b8"
 PHI = "\u03C6"
-# PI = "\u03C0"
 
 rhohat = RHO + u"\u0302" 
 thetahat = THETA + u"\u0302"
@@ -964,12 +963,12 @@ def main(spacerpady, font_size, text_font):
         lrf_bottom_frame_text.pack(side="top", fill="x",padx=20, expand=False)
 
         #
-        view_size_text = ttk.Label(lrf_bottom_frame_text, text=f"View size [n*n*n]:")
+        view_size_text = ttk.Label(lrf_bottom_frame_text, text=f"View size [±n*±n*±n]:")
         view_size_text.config(font=(text_font, font_size, "bold"))
         view_size_text.pack(side="left")
 
         view_size_text_spacer = ttk.Label(lrf_bottom_frame_text)
-        view_size_text_spacer.pack(side="left", padx=42)
+        view_size_text_spacer.pack(side="left", padx=21)
 
         clutter_size_text = ttk.Label(lrf_bottom_frame_text, text=f"Clutter size [n*m*v]:")
         clutter_size_text.config(font=(text_font, font_size, "bold"))
