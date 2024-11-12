@@ -1,7 +1,13 @@
 # EMField_3DVector_Grapher
 How to use:
 - Input your vector field equation that you would like to plot into the corresponding component entry fields.
-- Select how you want to display the 3D field with the check boxes to the left of the 3D plot
+- Input the view size that you wish the grid to display.
+  - I.e. This will make the view of the graph display n units along the ±x-axis, ±y-axis, and ±z-axis.
+  - Default value is 10 units.
+- Input the number of sample spaces you'd like to see on the plot
+  - Default value is 3, 3, 3 corresponding to 3 x-axis samples, 3 y-axis
+  - Minimum value along each axis is 1
+- Select how you want to display the 3D field with the checkboxes to the left of the 3D plot
   - Select Normalize to make the length of every vector the same.
   - Select Relative Magnitude to give a constant (input value) multiplied by the relative magnitude of each vector.
   - Select Color Magnitude to show relative magnitude with colors.
