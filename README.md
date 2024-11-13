@@ -14,5 +14,5 @@ How to use:
 - To switch between cartesian, cylindrical, or spherical vector field plotters, click on the upper left-hand corner of the application to file and select your desired field plotter. 
 
 # Warnings:
-- Recommended gridsize [x*y*z]: x < 6, y < 6, z < 6 (max should be 10x10x10, due to matplotlib being very laggy)
+- Recommended gridsize [x*y*z]: x < 6, y < 6, z < 6 (max should be 10 x 10 x 10, due to matplotlib being very laggy past this)
 - Don't input random variables into the text entry field areas (i.e. f, g, etc.)
